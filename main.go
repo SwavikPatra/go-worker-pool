@@ -48,6 +48,7 @@ func (p *Pool) Worker(ctx context.Context, id int) {
 					fmt.Println("Go routine: ", id, "doing it's job: ", job)
 				default:
 					fmt.Println("Go routine: ", id, "exiting.")
+					return
 				}
 			}
 		case job, ok := <-p.jobs:
